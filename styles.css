@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Base Reset & Typography Enhancements */
 :root {
     --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
@@ -81,3 +82,88 @@ body {
 @media (max-width: 768px) {
     #cursor, #cursor-follower { display: none !important; }
 }
+=======
+/* Base Reset & Typography Enhancements */
+:root {
+    --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #F9F9F9;
+}
+::-webkit-scrollbar-thumb {
+    background: #D4AF37;
+    border-radius: 3px;
+}
+
+/* Glassmorphism Utilities */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Text Reveal Animation Classes */
+.reveal-text {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Image Hover Effects */
+.img-hover-zoom {
+    overflow: hidden;
+}
+.img-hover-zoom img {
+    transition: transform 1.2s var(--ease-out-expo);
+}
+.img-hover-zoom:hover img {
+    transform: scale(1.05);
+}
+
+/* Button Animations */
+.btn-magnetic {
+    transition: transform 0.3s ease-out;
+}
+
+/* Line Clamp */
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Loader */
+.loader-overlay {
+    position: fixed;
+    inset: 0;
+    background: #1A1A1A;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #D4AF37;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-style: italic;
+}
+
+/* Custom Cursor */
+@media (max-width: 768px) {
+    #cursor, #cursor-follower { display: none !important; }
+}
+>>>>>>> 9def192408a31e5a130aedbc43f89880184eea5c
