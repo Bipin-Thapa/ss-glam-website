@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SS Glam | Beauty Studio & Academy</title>
+    <meta name="google-site-verification" content="8f513f3bfb36683f" />
+
+    
+    <!-- Fonts: Geist Sans (Linear-like) & Playfair Display (Luxury) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',
+                            dark: '#1A1A1A',
+                            cream: '#F9F9F9',
+                            muted: '#888888',
+                            soft: '#F5F5F0'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Libraries -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-brand-cream text-brand-dark antialiased overflow-x-hidden selection:bg-brand-gold selection:text-white">
+
+    <!-- Custom Cursor -->
+    <div id="cursor" class="fixed w-4 h-4 bg-brand-dark rounded-full pointer-events-none z-50 hidden md:block mix-blend-difference"></div>
+    <div id="cursor-follower" class="fixed w-10 h-10 border border-brand-dark rounded-full pointer-events-none z-50 hidden md:block transition-transform duration-200 ease-out mix-blend-difference"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-40 px-6 py-6 transition-all duration-500" id="navbar">
+        <div class="max-w-7xl mx-auto flex justify-between items-center backdrop-blur-md bg-white/70 px-6 py-4 rounded-2xl border border-white/20 shadow-sm">
+            <a href="#" class="text-2xl font-serif italic font-semibold tracking-tighter hover:opacity-70 transition-opacity">
+                SS Glam<span class="text-brand-gold">.</span>
+            </a>
+            
+            <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
+                <a href="#home" class="nav-link hover:text-brand-gold transition-colors">Studio</a>
+                <a href="#services" class="nav-link hover:text-brand-gold transition-colors">Services</a>
+                <a href="#academy" class="nav-link hover:text-brand-gold transition-colors">Academy</a>
+                <a href="#gallery" class="nav-link hover:text-brand-gold transition-colors">Portfolio</a>
+                <a href="#contact" class="nav-link hover:text-brand-gold transition-colors">Contact</a>
+            </div>
+
+            <button class="md:hidden p-2" id="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <a href="#book" class="hidden md:block px-6 py-2 bg-brand-dark text-white text-xs uppercase tracking-widest rounded-full hover:bg-brand-gold transition-colors duration-300">
+                Book Now
+            </a>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-brand-cream z-30 transform translate-x-full transition-transform duration-500 flex flex-col justify-center items-center space-y-8">
+        <a href="#home" class="mobile-link text-3xl font-serif hover:text-brand-gold">Studio</a>
+        <a href="#services" class="mobile-link text-3xl font-serif hover:text-brand-gold">Services</a>
+        <a href="#academy" class="mobile-link text-3xl font-serif hover:text-brand-gold">Academy</a>
+        <a href="#gallery" class="mobile-link text-3xl font-serif hover:text-brand-gold">Portfolio</a>
+        <a href="#contact" class="mobile-link text-3xl font-serif hover:text-brand-gold">Contact</a>
+        <button id="close-menu" class="absolute top-8 right-8 p-2">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+    </div>
+
+    <!-- Main Content Container -->
+    <main id="app">
+        <!-- Content injected by JS -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-brand-cream py-20 px-6 mt-20">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-2">
+                <h2 class="text-4xl font-serif italic mb-6">SS Glam<span class="text-brand-gold">.</span></h2>
+                <p class="text-brand-muted max-w-sm font-light leading-relaxed">
+                    Redefining beauty through precision, art, and education. We bring out the glamour in every individual.
+                </p>
+            </div>
+            <div>
+                <h3 class="text-sm uppercase tracking-widest mb-6 text-brand-gold">Explore</h3>
+                <ul class="space-y-4 font-light text-sm text-brand-muted">
+                    <li><a href="#services" class="hover:text-white transition-colors">Treatments</a></li>
+                    <li><a href="#academy" class="hover:text-white transition-colors">Academy Courses</a></li>
+                    <li><a href="#about" class="hover:text-white transition-colors">Our Story</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-sm uppercase tracking-widest mb-6 text-brand-gold">Connect</h3>
+                <ul class="space-y-4 font-light text-sm text-brand-muted">
+                    <li>
+                        <a href="https://www.tiktok.com/@ss_glam2?_r=1&_t=ZS-942dOBnPmzc" target="_blank">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.17h-3.057v13.271a2.726 2.726 0 1 1-2.726-2.726c.182 0 .36.02.532.057V9.938a5.507 5.507 0 0 0-.532-.026 5.726 5.726 0 1 0 5.726 5.726V8.687a7.77 7.77 0 0 0 4.827 1.683V7.313c-.364 0-.724-.043-1.073-.127z"/>
+  </svg>
+</a>
+
+</a>
+
+                    </li>
+                    <li>
+                    <a href="https://www.facebook.com/share/1DvwS3GBJX/" 
+   target="_blank" 
+   rel="noopener noreferrer"
+   class="text-glam-gray hover:text-glam-gold transition-colors">
+    <i data-lucide="facebook"></i>
+</a>
+                    </a>
+                    </li>
+                    <li>+977 9748838789</li>
+                    <li>
+                <a href="https://wa.me/9748838789" target="_blank">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20.52 3.48A11.8 11.8 0 0 0 12.03 0C5.4 0 .06 5.34.06 11.97c0 2.11.55 4.18 1.6 6L0 24l6.2-1.63a11.9 11.9 0 0 0 5.83 1.49h.01c6.63 0 11.97-5.34 11.97-11.97 0-3.2-1.25-6.2-3.49-8.41zM12.04 21.3h-.01a9.3 9.3 0 0 1-4.73-1.29l-.34-.2-3.68.97.98-3.59-.22-.37a9.28 9.28 0 0 1-1.42-4.95c0-5.14 4.19-9.33 9.35-9.33 2.5 0 4.85.97 6.61 2.74a9.27 9.27 0 0 1 2.73 6.6c0 5.15-4.19 9.34-9.33 9.34zm5.13-6.98c-.28-.14-1.66-.82-1.92-.91-.26-.1-.45-.14-.64.14-.19.28-.73.91-.9 1.1-.17.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.36-.83-.74-1.39-1.66-1.55-1.94-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.49.14-.17.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.64-1.54-.88-2.11-.23-.55-.47-.47-.64-.48l-.55-.01c-.19 0-.49.07-.75.35-.26.28-1 1-1 2.44s1.03 2.84 1.17 3.03c.14.19 2.02 3.08 4.9 4.32.69.3 1.23.48 1.65.62.69.22 1.32.19 1.82.12.56-.08 1.66-.68 1.9-1.34.23-.66.23-1.22.16-1.34-.07-.12-.26-.19-.54-.33z"/>
+  </svg>
+</a>
+
+</a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/ss_glam_beauty_studio?igsh=MXVpcmhwM2tkc3V2cw==" 
+   target="_blank" 
+   rel="noopener noreferrer"
+   class="text-glam-gray hover:text-glam-gold transition-colors">
+    <i data-lucide="instagram"></i>
+</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/10 flex justify-between text-xs text-brand-muted font-light">
+            <p>&copy; 2026 SS Glam Beauty Studio.</p>
+            <p>Designed with elegance.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
